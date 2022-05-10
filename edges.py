@@ -24,17 +24,17 @@ image_edges = cv2.adaptiveThreshold(
     cv2.ADAPTIVE_THRESH_MEAN_C,
     cv2.THRESH_BINARY,
     blockSize=7,
-    C=2
+    C=1.1
 )
 
-# convert image to grayscale cartoon style
+# # convert image to grayscale cartoon style
 image_cartoon = cv2.bitwise_and(image_grayscale, image_edges)
 
-# write output images
+# # write output images
 cv2.imwrite('image_edges.png', image_edges)         # bare edges
 cv2.imwrite('image_cartoon.png', image_cartoon)       # cartoon style
 
-# display image in a window
+# # display image in a window
 cv2.imshow('Image', image_cartoon)
 
 # break out of a program
