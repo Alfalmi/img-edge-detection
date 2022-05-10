@@ -15,7 +15,7 @@ image = cv2.imread('image.jpeg', cv2.IMREAD_UNCHANGED)
 image_grayscale = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 # reduce image noice
-image_blur = cv2.medianBlur(image_grayscale, 9)
+image_blur = cv2.medianBlur(image_grayscale, 5)
 
 # extract edges
 image_edges = cv2.adaptiveThreshold(
@@ -24,7 +24,7 @@ image_edges = cv2.adaptiveThreshold(
     cv2.ADAPTIVE_THRESH_MEAN_C,
     cv2.THRESH_BINARY,
     blockSize=7,
-    C=1.1
+    C=1.5
 )
 
 # # convert image to grayscale cartoon style
